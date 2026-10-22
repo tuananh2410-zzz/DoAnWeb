@@ -1,17 +1,16 @@
 <?php 
-    include("header.php"); // Gọi thanh menu chung chuẩn đét
+    include("header.php"); 
 ?>
 
 <div style="padding: 50px 20px; background-color: #000; min-height: 100vh;">
     <h2 style="text-align: center; color: #00ffff; text-transform: uppercase; margin-bottom: 40px; font-family: sans-serif; letter-spacing: 1px; text-shadow: 0 0 10px #00ffff;">
-        Danh Mục Bàn Phím Gaming
+        DANH MỤC BÀN PHÍM GAMING
     </h2>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto;">
         <?php
-        include_once("connect.php"); // Kết nối database xampp
+        include_once("connect.php");
         
-        // Truy vấn lấy dữ liệu từ bảng dsbanphim
         $sql = "SELECT * FROM dsbanphim"; 
         $result = mysqli_query($conn, $sql);
         
@@ -24,7 +23,7 @@
                     </div>
                     
                     <h3 style="font-size: 15px; min-height: 40px; margin: 10px 0; color: #fff; font-family: sans-serif; line-height: 1.4;">
-                        <?php echo $row['ten_bp']; ?>
+                        <?php echo $row['ten_bp']; ?> <!-- Khớp với cột ten_bp trong phpMyAdmin -->
                     </h3>
                     
                     <p style="color: #00ffff; font-size: 18px; font-weight: bold; margin: 10px 0; font-family: sans-serif;">
@@ -38,12 +37,12 @@
             <?php 
             }
         } else {
-            echo "<p style='color: #00ffff; text-align: center; width: 100%;'>Dữ liệu bàn phím đang được cập nhật...</p>";
+            echo "<p style='color: #00ffff; text-align: center; width: 100%;'>Dữ liệu bàn phím gaming đang được cập nhật...</p>";
         }
         ?>
     </div>
 </div>
 
 <?php 
-    include("footer.php"); // Gọi chân trang và khung chat để đóng website
+    include("footer.php"); 
 ?>
